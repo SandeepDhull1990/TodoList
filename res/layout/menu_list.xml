@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/menu_list_add_todo_list_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:visibility="visible" >
+
+        <Button
+            android:id="@+id/menu_list_todo_list_addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="Add" />
+
+        <EditText
+            android:id="@+id/menu_list_todo_list_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/menu_list_todo_list_addButton"
+            android:layout_alignBottom="@+id/menu_list_todo_list_addButton"
+            android:layout_toLeftOf="@+id/menu_list_todo_list_addButton"
+            android:hint="Todo List Title"
+            android:imeOptions="actionDone"
+            android:singleLine="true" >
+        </EditText>
+
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:id="@+id/menu_list_status_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:minWidth="200dp"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <ProgressBar
+            android:id="@+id/menu_list_progressView"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/menu_list_status_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/loading_todo_lists"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <com.example.ulitmatetodolist.MenuListView
+        android:id="@+id/menu_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/menu_list_add_todo_list_container"
+        android:layout_marginTop="5dp"
+        android:choiceMode="singleChoice" >
+        <requestFocus/>
+    </com.example.ulitmatetodolist.MenuListView>
+
+</RelativeLayout>
